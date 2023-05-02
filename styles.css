@@ -1,0 +1,83 @@
+html,
+body {
+	height: 100%;
+	font-family: 'Bruno Ace', sans-serif;
+}
+h1 {
+	margin: auto;
+	text-align: center;
+	font-size: 1rem;
+	padding-bottom: 1%;
+}
+
+.wrapper {
+	height: 90%;
+	width: 45%;
+	margin: auto;
+	background: #3c486b;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 2rem;
+	border: 1px solid #f9d949;
+	box-shadow: 0px 8px 24px 0px;
+}
+
+.container {
+	display: grid;
+	width: 90%;
+	height: 80%;
+	background: #fff;
+}
+.buttons {
+	width: 90%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.colors {
+	display: inline-grid;
+	margin-top: 5%;
+}
+.colors button {
+	width: 40%;
+	margin: auto;
+	background: #f9d949;
+	border: none;
+	margin-bottom: 3%;
+	padding: 2%;
+	border-radius: 4rem;
+	box-shadow: 0px 5px 15px -3px;
+	transition: 0.3s;
+}
+
+.colors input {
+	width: 40%;
+	margin: auto;
+	background: #f9d949;
+	border-radius: 4rem;
+	box-shadow: 0px 5px 15px -3px;
+	transition: 0.3s;
+}
+
+.actions {
+	display: inline-grid;
+	margin-top: 5%;
+}
+.actions button {
+	width: 40%;
+	margin: auto;
+	background: #f9d949;
+	border: none;
+	margin-bottom: 3%;
+	padding: 2%;
+	border-radius: 4rem;
+	box-shadow: 0px 5px 15px -3px;
+	transition: 0.3s;
+}
+
+footer p {
+	text-align: center;
+	margin-bottom: 0;
+	font-size: 0.8rem;
+}
