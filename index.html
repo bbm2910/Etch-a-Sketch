@@ -12,29 +12,31 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Etch-a-Sketch</h1>
-   <div class="wrapper">
+        <h1>Etch-a-Sketch</h1>
+    <div class="wrapper">
+        <div class="slidecontainer">
+            <input type="range" min="4" max="64" value="34" class="slider" id="myRange">
+        </div>
+        <h2 class="grid-count"></h2>
+        <div class="container">
+            <!-- filled with divs JS -->
+        </div>
 
-
-    <div class="container">
-        <!-- filled with divs JS -->
+        <div class="buttons">
+            <div class="colors">
+                <button class="black">Default</button>
+                <input type="color" class="color-selection" name="head" value="#F45050">
+                <label for="head"></label>
+            </div>
+            <div class="actions">
+                <button class="erase">Erase</button>
+                <button class="reset">Reset</button>
+            </div>
+        </div>
     </div>
-
-   <div class="buttons">
-    <div class="colors">
-        <button class="black">Default</button>
-        <input type="color" class="color-selection" name="head" value="#F45050">
-        <label for="head"></label>
-    </div>
-    <div class="actions">
-        <button class="erase">Erase</button>
-        <button class="reset">Reset</button>
-    </div>
-   </div>
-   </div>
-   <footer>
-    <p>BM 2023</p>
-   </footer>
+    <footer>
+        <p>BM 2023</p>
+    </footer>
 
 
 

@@ -8,29 +8,66 @@ const resetButton = document.querySelector(".reset");
 const eraseButton = document.querySelector(".erase");
 const initialColor = document.querySelector(".black");
 const selectColor = document.querySelector(".color-selection")
-
-const gridSize = document.querySelector("#gridSize");
+const slider = document.querySelector(".slider");
+const sliderNumber = document.querySelector(".grid-count");
+sliderNumber.textContent = "Grid size";
 
 let defaultColor = "#000";
-let gridCount = 32;
+let gridCount = 34;
+
+// slider.oninput = function () {
+//     sliderNumber.textContent = this.value;
+//     gridCount = this.value;
+// }
+
+
+//Make the grid
 function divGrid(gridNumber) {
     let gridArea = gridCount * gridCount;
     for (let i = 1; i <= gridArea; i++) {
-        let gridItem = document.createElement('div');
-        gridItem.classList.add('cell');
+        let gridItem = document.createElement("div");
+        gridItem.classList.add("cell");
         container.style.gridTemplateColumns = `repeat(${gridNumber}, 1fr)`;
-        container.style.gridTemplateRows = `repeat(${gridNumber}, 4fr)`;
+        container.style.gridTemplateRows = `repeat(${gridNumber}, 1fr)`;
         container.insertAdjacentElement('beforeend', gridItem);
 
     }
     for (i = 0; i < gridArea; i++) {
-        cell[i].addEventListener('mouseenter', function (event) {
-
+        cell[i].addEventListener("mouseenter", function (event) {
             event.target.style.backgroundColor = defaultColor;
         });
     }
 }
 divGrid(gridCount);
+
+
+//Adjust the grid from the slider
+slider.addEventListener("input", function () {
+    sliderNumber.textContent = this.value;
+    let val = this.value;
+    function removeAllChildNodes(parent) {
+        while (parent.firstChild) {
+            parent.removeChild(parent.firstChild);
+        }
+    }
+    const container = document.querySelector(".container");
+    removeAllChildNodes(container);
+
+    let gridItem = document.createElement("div");
+    gridItem.classList.add("cell");
+    container.style.gridTemplateColumns = `repeat(${val}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${val}, 1fr)`;
+    container.insertAdjacentElement('beforeend', gridItem);
+
+    for (let i = 0; i < val * val; i++) {
+        const div = document.createElement("div");
+        div.classList.add("cell");
+        div.addEventListener("mouseenter", function (event) {
+            event.target.style.backgroundColor = defaultColor;
+        })
+        container.appendChild(div);
+    }
+});
 
 
 
@@ -41,7 +78,7 @@ initialColor.addEventListener("click", function () {
     initialColor.style.opacity = "1";
     resetButton.style.opacity = "0.5";
     for (i = 0; i < (gridCount * gridCount); i++) {
-        cell[i].addEventListener('mouseenter', function (event) {
+        cell[i].addEventListener("mouseenter", function (event) {
 
             event.target.style.backgroundColor = defaultColor;
         });
@@ -56,7 +93,7 @@ selectColor.addEventListener("click", function () {
     initialColor.style.opacity = "0.5";
     resetButton.style.opacity = "0.5";
     for (i = 0; i < (gridCount * gridCount); i++) {
-        cell[i].addEventListener('mouseenter', function (event) {
+        cell[i].addEventListener("mouseenter", function (event) {
             let color = selectColor;
             event.target.style.backgroundColor = color.value;
         });
@@ -71,7 +108,7 @@ eraseButton.addEventListener("click", function () {
     initialColor.style.opacity = "0.5";
     resetButton.style.opacity = "0.5";
     for (i = 0; i < (gridCount * gridCount); i++) {
-        cell[i].addEventListener('mouseenter', function (event) {
+        cell[i].addEventListener("mouseenter", function (event) {
             event.target.style.backgroundColor = "#ffffff";
         });
     }
@@ -86,7 +123,7 @@ resetButton.addEventListener("click", function () {
     resetButton.style.opacity = "1";
     for (i = 0; i < (gridCount * gridCount); i++) {
         cell[i].style.backgroundColor = "#ffffff";
-        cell[i].addEventListener('mouseenter', function (event) {
+        cell[i].addEventListener("mouseenter", function (event) {
 
             event.target.style.backgroundColor = "#000";
         });

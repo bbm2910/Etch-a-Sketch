@@ -27,7 +27,7 @@ h1 {
 .container {
 	display: grid;
 	width: 90%;
-	height: 80%;
+	height: 95%;
 	background: #fff;
 }
 .buttons {
@@ -37,7 +37,8 @@ h1 {
 }
 .colors {
 	display: inline-grid;
-	margin-top: 5%;
+	margin-top: 8%;
+	margin-bottom: 8%;
 }
 .colors button {
 	width: 40%;
@@ -53,6 +54,7 @@ h1 {
 
 .colors input {
 	width: 40%;
+	padding: 1%;
 	margin: auto;
 	background: #f9d949;
 	border-radius: 4rem;
@@ -62,7 +64,8 @@ h1 {
 
 .actions {
 	display: inline-grid;
-	margin-top: 5%;
+	margin-top: 8%;
+	margin-bottom: 8%;
 }
 .actions button {
 	width: 40%;
@@ -75,7 +78,24 @@ h1 {
 	box-shadow: 0px 5px 15px -3px;
 	transition: 0.3s;
 }
-
+h2 {
+	font-size: 0.7rem;
+	color: #fff;
+	margin-top: 0;
+}
+.slider {
+	/* -webkit-appearance: none; */
+	border-radius: 4rem;
+	background: #fff;
+	cursor: pointer;
+	outline: none;
+	opacity: 0.7;
+	transition: 0.2s;
+	margin-top: 5%;
+}
+.slider:hover {
+	opacity: 1;
+}
 footer p {
 	text-align: center;
 	margin-bottom: 0;
